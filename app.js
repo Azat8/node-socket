@@ -29,8 +29,8 @@ io.sockets.on('connection', function (socket) {
    
    socket.on('send message', function (data, callback) {
        var msg = data.trim();
-       if(msg.substr(0,3) === '/w ') {
-           msg = msg.substr(3);
+       if(msg.substr(0,1) === '@') {
+           msg = msg.substr(1);
            var ind = msg.indexOf(' ');
            if(ind !== -1) {
                var name = msg.substring(0, ind);
@@ -41,6 +41,7 @@ io.sockets.on('connection', function (socket) {
                    callback('Error! Enter a valid user.');
                }
                console.log('Whisper!');
+               console.log(socket);
            } else {
                 callback('Error! Please enter a message for your whisper.');
            }

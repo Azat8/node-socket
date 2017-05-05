@@ -88,11 +88,11 @@
             });
 
             socket.on('new message', function (data) {
-                $chat.append("<span class='msg'><br />" + data.nick + ": <br />" + data.msg + "</span><br/>");
+                $chat.append("<span class='msg'><br />" + data.nick + ": " + data.msg + "</span><br/>");
             });
 
             socket.on('whisper', function (data) {
-                $chat.append("<span class='whisper'><br />" + data.nick + ": <br />" + data.msg + "</span><br/>");
+                $chat.append("<span class='whisper'><br />" + data.nick + ": " + data.msg + "</span><br/>");
             });
 
         });
